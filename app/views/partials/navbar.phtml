@@ -8,21 +8,20 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="/index">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/resume" class="active">Resume</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/portfolio">Portfolio</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/" <?= $this->dispatcher->getControllerName() == 'index' ? 'class="active"' : '' ?>>Home</a></li>
+          <li><a href="/about" <?= $this->dispatcher->getControllerName() == 'about' ? 'class="active"' : '' ?>>About</a></li>
+          <li><a href="/resume" <?= $this->dispatcher->getControllerName() == 'resume' ? 'class="active"' : '' ?>>Resume</a></li>
+          <li><a href="/services" <?= $this->dispatcher->getControllerName() == 'services' ? 'class="active"' : '' ?>>Services</a></li>
+          <li><a href="/portfolio" <?= $this->dispatcher->getControllerName() == 'portfolio' ? 'class="active"' : '' ?>>Portfolio</a></li>
+          <li><a href="/contact" <?= $this->dispatcher->getControllerName() == 'contact' ? 'class="active"' : '' ?>>Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/amar_0218?igsh=cmFvNDk4aG9zazE=" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/raihan-fauzan-7b033732b/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/rehanFauzan/" target="_blank" class="github"><i class="bi bi-github"></i></a>
       </div>
 
     </div>
