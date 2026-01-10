@@ -10,6 +10,24 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--surface-color); border: 1px solid var(--accent-color);">
+              <div class="modal-header" style="border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);">
+                <h5 class="modal-title" style="color: var(--accent-color);"><i class="bi bi-check-circle-fill me-2"></i>Success</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: invert(1);"></button>
+              </div>
+              <div class="modal-body">
+                <p style="color: var(--default-color); margin: 0;">Your message has been sent. Thank you!</p>
+              </div>
+              <div class="modal-footer" style="border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);">
+                <button type="button" class="btn" data-bs-dismiss="modal" style="background-color: var(--accent-color); color: var(--contrast-color); border: none; padding: 10px 25px; border-radius: 25px;">OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="row g-4 g-lg-5">
           <div class="col-lg-5">
@@ -57,7 +75,7 @@
               <h3>Get In Touch</h3>
               <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
 
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <form action="/contact/submit" method="post" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
 
                   <div class="col-md-6">
@@ -77,10 +95,6 @@
                   </div>
 
                   <div class="col-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
                     <button type="submit" class="btn">Send Message</button>
                   </div>
 
@@ -97,6 +111,17 @@
     </section><!-- /Contact Section -->
 
   </main>
+
+  <!-- Success Modal Script -->
+  <?php if ($this->session->has('success_message')): ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+    });
+  </script>
+  <?php $this->session->remove('success_message'); ?>
+  <?php endif; ?>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
