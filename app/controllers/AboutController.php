@@ -5,7 +5,7 @@ class AboutController extends ControllerBase
 {
     public function indexAction()
     {
-        // Phalcon akan otomatis render about/index.phtml
+        
     }
 }
 
